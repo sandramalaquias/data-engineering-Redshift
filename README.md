@@ -6,14 +6,13 @@
 A music streaming startup, Sparkify, has grown their user base and song database and want to move their processes and data onto the cloud. Their data resides in S3, in a directory of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app.
 
 As their data engineer, you are tasked with building an ETL pipeline that extracts their data from S3, stages them in Redshift, and transforms data into a set of dimensional tables for their analytics team to continue finding insights into what songs their users are listening to. You'll be able to test your database and ETL pipeline by running queries given to you by the analytics team from Sparkify and compare your results with their expected results.
-Project Description
 
 To complete the project, I get access to AWS resources programaticaly using BOTO3 API, loaded data from S3 to staging tables on Redshift and execute SQL statements that create the analytics tables from these staging tables and get a single dashboard for songs played. Finally, get disconnect from AWS resources progamatically again using BOTO3 API.
 
 
 ## Project Description
 
-This project on data warehouse was made with REDSHIFT / Postgres defining fact and dimension tables (star schema) for a particular analytic focus. And has an ETL pipeline using Python to transfers data from S3 Bucket to Redshift.
+This project on data warehouse was made with REDSHIFT / Postgres defining fact and dimension tables (star schema) for a particular analytic focus, and has an ETL pipeline using Python to transfers data from S3 Bucket to Redshift.
 
 ## Files
 
@@ -25,7 +24,7 @@ The first dataset is a subset of real data from the [Million Song Dataset](http:
 song_data/A/A/B/TRAABJL12903CDCF1A.json
 
 
-And below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.
+Below is an example of what a single song file, TRAABJL12903CDCF1A.json, looks like.
 
 ```
 {"num_songs": 1, "artist_id": "ARJIE2Y1187B994AB7", "artist_latitude": null, "artist_longitude": null, "artist_location": "", "artist_name": "Line Renaud", "song_id": "SOUPIRU12A6D4FA1E1", "title": "Der Kleine Dompfaff", "duration": 152.92036, "year": 0}
@@ -41,7 +40,7 @@ The log files in the dataset you'll be working with are partitioned by year and 
 log_data/2018/11/2018-11-12-events.json
 log_data/2018/11/2018-11-13-events.json
 ```
-And below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
+Below is an example of what the data in a log file, 2018-11-12-events.json, looks like.
 
 ![](https://video.udacity-data.com/topher/2019/February/5c6c15e9_log-data/log-data.png)
 This dataset was distributed into time, users, and songs_play table.
@@ -62,7 +61,7 @@ This dataset was distributed into time, users, and songs_play table.
 ## Run the scripts
 
 The scripts of this project consist in:
-1. Get your KEY and SCRET KEY from AWS IAM
+1. Get your KEY and SECRET KEY from AWS IAM
 2. Update the file "dw1.config", changing the content of the variables that have string "update"
 3. Run the script "AWS_connect.py" at console to get the connection to Redshift and S3
 4. Run the script "create_tables.py" at console to create REDSHIFT schema and tables to "staging" and "sparkfy"
@@ -113,10 +112,10 @@ To create tables use the scripts:
 To populate the tables use the scripts:
 - Statements in `sql_queries.py `to insert records into each table and get some inputs from data
 - The information on "dwh1.config" updated from "AWS_connect.py"
-- At end, single graph is created and salved on Results.
+- At end, single graph is created and saved on Results.
 
 ### AWS desconnect 
-To end the, use this script to desallow your AWS resources. The script follows steps bellow:
+At the end use this script to disallow your AWS resources. The script follows steps bellow:
 - Delete AWS REDSHIFT Cluster
 - Delete file song_manifest on S3 Bucket - MyBucket
 - Delete S3 Bucket - MyBucket
@@ -128,8 +127,8 @@ To end the, use this script to desallow your AWS resources. The script follows s
 
 ## Data Analytics
 
-Using this ERD and their tables, is an easier way to create queries to answer the single question to analytics issues like subcribers level.
-- In this plot, is possible to see that the level of subscribers (free, paid) has no variation. Maybe intensifying the market campaing to get more paid subscriber, increase the profit.
+Using this ERD and their tables, is an easier way to create queries to answer the single question to analytics issues like subscribers level.
+- In this plot, is possible to see that the level of subscribers (free, paid) has no variation. Maybe intensifying the market campaing to get more paid subscribers, and increase the profit.
 
 ![level](https://github.com/sandramalaquias/data-engineering-Redshift/blob/4184288175034ba8a580a25b533a4ed289c9caf5/Results/Song_level.png)
 
