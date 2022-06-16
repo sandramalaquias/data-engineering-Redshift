@@ -1,5 +1,5 @@
 
-!(sparkfy.png)
+![sparkfy](https://github.com/sandramalaquias/data-engineering-Redshift/blob/4184288175034ba8a580a25b533a4ed289c9caf5/sparkfy.png)
 
 # Project: Data Warehouse with REDSHIFT
 
@@ -48,7 +48,7 @@ This dataset was distributed into time, users, and songs_play table.
 
 ## Entity Relationship Diagram (ERD) - Star Schema
 
-!(REDSHIFT_ERD.png)
+![REDSHIFT_ERD](https://github.com/sandramalaquias/data-engineering-Redshift/blob/4184288175034ba8a580a25b533a4ed289c9caf5/REDSHIFT_ERD.png)
 
  **Benefits of the Star Schema**
 
@@ -60,6 +60,7 @@ This dataset was distributed into time, users, and songs_play table.
 
 
 ## Run the scripts
+
 The scripts of this project consist in:
 1. Get your KEY and SCRET KEY from AWS IAM
 2. Update the file "dw1.config", changing the content of the variables that have string "update"
@@ -68,7 +69,7 @@ The scripts of this project consist in:
 5. Run the script "etl.py" at console to populate all the tables. This script also create a file with a single dashboard for songsplay
 6. Run the script "AWS_disconnect.py" at console to close the AWS resources
 
-!(AWS.drawio.png)
+![flow](https://github.com/sandramalaquias/data-engineering-Redshift/blob/4184288175034ba8a580a25b533a4ed289c9caf5/AWS.drawio.png)
 
 ### The environment:
 -  Python versions from 3.6 to 3.10    
@@ -127,8 +128,11 @@ To end the, use this script to desallow your AWS resources. The script follows s
 
 ## Data Analytics
 
-Using this ERD and their tables, is an easier way to create queries to answer the single question to analytics issues like:
-- Time variation of user's level
+Using this ERD and their tables, is an easier way to create queries to answer the single question to analytics issues like subcribers level.
+- In this plot, is possible to see that the level of subscribers (free, paid) has no variation. Maybe intensifying the market campaing to get more paid subscriber, increase the profit.
+
+![level](https://github.com/sandramalaquias/data-engineering-Redshift/blob/4184288175034ba8a580a25b533a4ed289c9caf5/Results/Song_level.png)
+
 
 Or make more advanced topics like predict user churn or music recommendation.
  
